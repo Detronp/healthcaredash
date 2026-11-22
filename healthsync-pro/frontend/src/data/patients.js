@@ -1,0 +1,283 @@
+// All records below are FICTIONAL demonstration data. Any resemblance to real
+// persons is coincidental. No real protected health information is used.
+
+export const DEPARTMENTS = [
+  "Cardiology",
+  "Pulmonology",
+  "ICU",
+  "Emergency",
+  "Neurology",
+  "Orthopedics",
+  "Oncology",
+  "Pediatrics",
+];
+
+export const STATUSES = ["Admitted", "Critical", "Observation", "Stable", "Discharged"];
+
+const p = (o) => o;
+
+export const patients = [
+  p({
+    id: "P-10421", name: "Marisol Quenby", dob: "1958-03-14", gender: "Female", mrn: "MRN-4471820",
+    department: "Cardiology", physician: "Dr. Alden Voss", admitted: "2026-11-17", status: "Admitted",
+    room: "4W-412", blood: "A+", phone: "(555) 010-2231", insurance: "Northwind Health PPO",
+    diagnosis: "Acute decompensated heart failure (HFrEF, EF 30%)",
+    history: ["Hypertension (2009)", "Type 2 diabetes mellitus (2014)", "NSTEMI, PCI to LAD (2021)"],
+    allergies: [{ name: "Penicillin", reaction: "Hives", severity: "Moderate" }],
+    medications: [
+      { name: "Furosemide", dose: "40 mg IV", freq: "BID" },
+      { name: "Carvedilol", dose: "6.25 mg PO", freq: "BID" },
+      { name: "Sacubitril/valsartan", dose: "24/26 mg PO", freq: "BID" },
+      { name: "Insulin glargine", dose: "18 units SC", freq: "Nightly" },
+    ],
+    plan: [
+      "IV diuresis targeting net negative 1–1.5 L/day",
+      "Daily weights, strict I&O, BMP each morning",
+      "Fluid restriction 1.5 L/day; 2 g sodium diet",
+      "Cardiology rehab consult before discharge",
+    ],
+    vitals: { hr: 96, sbp: 142, dbp: 88, rr: 22, spo2: 93, temp: 37.1, pain: 3 },
+    notes: [
+      { author: "Dr. Alden Voss", role: "Attending", time: "2026-11-22 08:15", text: "Dyspnea improving. Net −1.2 L overnight. Continue IV furosemide; recheck K+ this afternoon." },
+      { author: "Priya Okafor, RN", role: "Registered Nurse", time: "2026-11-22 06:40", text: "Slept on 2 pillows. Bilateral ankle edema 2+, improved from 3+. Weight down 0.8 kg." },
+    ],
+  }),
+  p({
+    id: "P-10422", name: "Desmond Hartwell", dob: "1949-11-02", gender: "Male", mrn: "MRN-4471833",
+    department: "ICU", physician: "Dr. Ingrid Solberg", admitted: "2026-11-19", status: "Critical",
+    room: "ICU-07", blood: "O+", phone: "(555) 010-8842", insurance: "Medicare (demo)",
+    diagnosis: "Severe community-acquired pneumonia with ARDS",
+    history: ["COPD GOLD 3 (2016)", "Former smoker, 40 pack-years", "Atrial fibrillation (2020)"],
+    allergies: [{ name: "Sulfa drugs", reaction: "Rash", severity: "Mild" }, { name: "Iodinated contrast", reaction: "Anaphylaxis", severity: "Severe" }],
+    medications: [
+      { name: "Ceftriaxone", dose: "2 g IV", freq: "Q24H" },
+      { name: "Azithromycin", dose: "500 mg IV", freq: "Q24H" },
+      { name: "Propofol", dose: "30 mcg/kg/min", freq: "Continuous" },
+      { name: "Apixaban", dose: "Held", freq: "—" },
+    ],
+    plan: [
+      "Lung-protective ventilation: VT 6 mL/kg PBW, Pplat < 30",
+      "Prone positioning 16 h/day while P/F < 150",
+      "Daily SAT/SBT screening; RASS goal −1 to −2",
+      "Repeat chest X-ray and ABG every morning",
+    ],
+    vitals: { hr: 118, sbp: 92, dbp: 54, rr: 28, spo2: 88, temp: 38.9, pain: 4 },
+    notes: [
+      { author: "Dr. Ingrid Solberg", role: "Intensivist", time: "2026-11-22 07:50", text: "P/F 128 on FiO2 0.70, PEEP 12. Proned overnight with modest improvement. Norepinephrine at 0.08." },
+      { author: "Tomás Reyes, RRT", role: "Respiratory Therapist", time: "2026-11-22 05:30", text: "Plateau 28 cmH2O. Suctioned moderate thick tan secretions. ABG drawn and sent." },
+    ],
+  }),
+  p({
+    id: "P-10423", name: "Ellowyn Prater", dob: "1990-07-28", gender: "Female", mrn: "MRN-4471859",
+    department: "Emergency", physician: "Dr. Marcus Feld", admitted: "2026-11-22", status: "Observation",
+    room: "ED-14", blood: "B+", phone: "(555) 010-3317", insurance: "Contoso Care HMO",
+    diagnosis: "Asthma exacerbation, moderate",
+    history: ["Persistent asthma since childhood", "Seasonal allergic rhinitis"],
+    allergies: [{ name: "Aspirin", reaction: "Bronchospasm", severity: "Severe" }],
+    medications: [
+      { name: "Albuterol/ipratropium", dose: "3 mL neb", freq: "Q4H" },
+      { name: "Methylprednisolone", dose: "60 mg IV", freq: "Q12H" },
+    ],
+    plan: ["Reassess peak flow after each nebulizer", "Wean O2 to SpO2 ≥ 94%", "Asthma action plan education"],
+    vitals: { hr: 104, sbp: 124, dbp: 78, rr: 24, spo2: 94, temp: 36.9, pain: 2 },
+    notes: [{ author: "Dr. Marcus Feld", role: "Emergency Physician", time: "2026-11-22 10:05", text: "Peak flow 55% predicted → 68% after 3 nebs. Observe 6 hours." }],
+  }),
+  p({
+    id: "P-10424", name: "Rafferty Okonkwo", dob: "1972-01-19", gender: "Male", mrn: "MRN-4471861",
+    department: "Neurology", physician: "Dr. Helena Marsh", admitted: "2026-11-20", status: "Stable",
+    room: "5E-508", blood: "AB+", phone: "(555) 010-5520", insurance: "Northwind Health PPO",
+    diagnosis: "Acute ischemic stroke, left MCA territory (post-thrombectomy)",
+    history: ["Hyperlipidemia", "Obstructive sleep apnea on CPAP"],
+    allergies: [],
+    medications: [
+      { name: "Aspirin", dose: "81 mg PO", freq: "Daily" },
+      { name: "Atorvastatin", dose: "80 mg PO", freq: "Nightly" },
+    ],
+    plan: ["Neuro checks Q4H", "PT/OT/SLP evaluation", "Telemetry for 48 h", "Outpatient stroke clinic follow-up"],
+    vitals: { hr: 72, sbp: 136, dbp: 82, rr: 16, spo2: 97, temp: 36.8, pain: 1 },
+    notes: [{ author: "Dr. Helena Marsh", role: "Neurologist", time: "2026-11-22 09:10", text: "NIHSS improved from 9 to 3. Mild right hand weakness persists." }],
+  }),
+  p({
+    id: "P-10425", name: "Imogen Vasquez-Lyle", dob: "1985-05-09", gender: "Female", mrn: "MRN-4471874",
+    department: "Orthopedics", physician: "Dr. Coleman Adebayo", admitted: "2026-11-18", status: "Stable",
+    room: "3N-305", blood: "O-", phone: "(555) 010-7783", insurance: "Fabrikam Mutual",
+    diagnosis: "Right total knee arthroplasty, POD 4",
+    history: ["Osteoarthritis right knee", "Hypothyroidism"],
+    allergies: [{ name: "Latex", reaction: "Contact dermatitis", severity: "Mild" }],
+    medications: [
+      { name: "Enoxaparin", dose: "40 mg SC", freq: "Daily" },
+      { name: "Oxycodone", dose: "5 mg PO", freq: "Q6H PRN" },
+      { name: "Levothyroxine", dose: "75 mcg PO", freq: "Daily" },
+    ],
+    plan: ["PT twice daily; goal 90° flexion", "DVT prophylaxis 14 days", "Discharge home with outpatient PT"],
+    vitals: { hr: 78, sbp: 118, dbp: 74, rr: 16, spo2: 98, temp: 37.0, pain: 4 },
+    notes: [{ author: "Dr. Coleman Adebayo", role: "Orthopedic Surgeon", time: "2026-11-22 07:30", text: "Incision clean, dry, intact. Flexion 82°. Anticipate discharge tomorrow." }],
+  }),
+  p({
+    id: "P-10426", name: "Thaddeus Brennick", dob: "1963-09-30", gender: "Male", mrn: "MRN-4471882",
+    department: "Pulmonology", physician: "Dr. Naomi Thistle", admitted: "2026-11-16", status: "Admitted",
+    room: "6W-611", blood: "A-", phone: "(555) 010-9014", insurance: "Medicare (demo)",
+    diagnosis: "COPD exacerbation with acute hypercapnic respiratory failure",
+    history: ["COPD GOLD 4", "Home oxygen 2 L/min", "Pulmonary hypertension"],
+    allergies: [{ name: "Codeine", reaction: "Nausea", severity: "Mild" }],
+    medications: [
+      { name: "Prednisone", dose: "40 mg PO", freq: "Daily" },
+      { name: "Tiotropium", dose: "18 mcg inh", freq: "Daily" },
+      { name: "Doxycycline", dose: "100 mg PO", freq: "BID" },
+    ],
+    plan: ["BiPAP nightly, nasal cannula by day", "Target SpO2 88–92%", "Pulmonary rehab referral"],
+    vitals: { hr: 92, sbp: 132, dbp: 80, rr: 22, spo2: 90, temp: 37.3, pain: 2 },
+    notes: [{ author: "Dr. Naomi Thistle", role: "Pulmonologist", time: "2026-11-22 08:45", text: "pCO2 down to 52 from 68. Tolerating BiPAP well overnight." }],
+  }),
+  p({
+    id: "P-10427", name: "Saoirse Lindqvist", dob: "2017-02-11", gender: "Female", mrn: "MRN-4471895",
+    department: "Pediatrics", physician: "Dr. Oren Castellano", admitted: "2026-11-21", status: "Observation",
+    room: "PED-204", blood: "B-", phone: "(555) 010-4408", insurance: "Contoso Care HMO",
+    diagnosis: "Bronchiolitis with mild dehydration",
+    history: ["Born at 36 weeks", "No chronic conditions"],
+    allergies: [],
+    medications: [{ name: "Dextrose 5% / 0.45% NaCl", dose: "45 mL/h IV", freq: "Continuous" }],
+    plan: ["Nasal suctioning PRN", "Advance oral intake as tolerated", "Discharge when SpO2 ≥ 92% on room air"],
+    vitals: { hr: 128, sbp: 98, dbp: 60, rr: 30, spo2: 94, temp: 37.8, pain: 1 },
+    notes: [{ author: "Dr. Oren Castellano", role: "Pediatrician", time: "2026-11-22 09:30", text: "Taking fluids by mouth. Low-flow O2 weaned to 0.5 L." }],
+  }),
+  p({
+    id: "P-10428", name: "Bartholomew Achebe", dob: "1955-12-24", gender: "Male", mrn: "MRN-4471907",
+    department: "Oncology", physician: "Dr. Yara Delacroix", admitted: "2026-11-14", status: "Admitted",
+    room: "7S-702", blood: "O+", phone: "(555) 010-6651", insurance: "Fabrikam Mutual",
+    diagnosis: "Neutropenic fever during chemotherapy (non-Hodgkin lymphoma)",
+    history: ["Diffuse large B-cell lymphoma (2026)", "Chronic kidney disease stage 3a"],
+    allergies: [{ name: "Vancomycin", reaction: "Infusion reaction", severity: "Moderate" }],
+    medications: [
+      { name: "Cefepime", dose: "2 g IV", freq: "Q8H" },
+      { name: "Filgrastim", dose: "480 mcg SC", freq: "Daily" },
+    ],
+    plan: ["Neutropenic precautions", "Daily CBC with differential", "Continue antibiotics until ANC > 500"],
+    vitals: { hr: 102, sbp: 108, dbp: 66, rr: 20, spo2: 96, temp: 38.4, pain: 3 },
+    notes: [{ author: "Dr. Yara Delacroix", role: "Oncologist", time: "2026-11-22 08:00", text: "ANC 320, rising. Febrile overnight to 38.6. Cultures pending." }],
+  }),
+  p({
+    id: "P-10429", name: "Henrietta Caldwell", dob: "1941-06-03", gender: "Female", mrn: "MRN-4471912",
+    department: "ICU", physician: "Dr. Ingrid Solberg", admitted: "2026-11-20", status: "Critical",
+    room: "ICU-03", blood: "A+", phone: "(555) 010-1179", insurance: "Medicare (demo)",
+    diagnosis: "Septic shock secondary to urinary source",
+    history: ["Chronic kidney disease stage 4", "Dementia, moderate"],
+    allergies: [{ name: "Morphine", reaction: "Delirium", severity: "Moderate" }],
+    medications: [
+      { name: "Meropenem", dose: "1 g IV", freq: "Q12H" },
+      { name: "Norepinephrine", dose: "0.12 mcg/kg/min", freq: "Continuous" },
+    ],
+    plan: ["MAP goal ≥ 65", "Trend lactate every 6 h", "Family meeting re: goals of care"],
+    vitals: { hr: 112, sbp: 86, dbp: 50, rr: 26, spo2: 91, temp: 38.6, pain: 2 },
+    notes: [{ author: "Dr. Ingrid Solberg", role: "Intensivist", time: "2026-11-22 08:20", text: "Lactate 3.1 → 2.4. Intubated for airway protection yesterday." }],
+  }),
+  p({
+    id: "P-10430", name: "Caspian Moreau", dob: "1979-10-15", gender: "Male", mrn: "MRN-4471926",
+    department: "Cardiology", physician: "Dr. Alden Voss", admitted: "2026-11-21", status: "Stable",
+    room: "4W-418", blood: "B+", phone: "(555) 010-2290", insurance: "Northwind Health PPO",
+    diagnosis: "New-onset atrial fibrillation with rapid ventricular response",
+    history: ["Hypertension"],
+    allergies: [],
+    medications: [
+      { name: "Diltiazem", dose: "120 mg PO", freq: "Daily" },
+      { name: "Apixaban", dose: "5 mg PO", freq: "BID" },
+    ],
+    plan: ["Rate control goal HR < 110", "Echocardiogram", "Consider outpatient cardioversion"],
+    vitals: { hr: 88, sbp: 128, dbp: 80, rr: 16, spo2: 98, temp: 36.7, pain: 0 },
+    notes: [{ author: "Dr. Alden Voss", role: "Attending", time: "2026-11-22 08:35", text: "Rate controlled overnight. Echo: normal EF, mild LA enlargement." }],
+  }),
+  p({
+    id: "P-10431", name: "Wilhelmina Strand", dob: "1968-04-22", gender: "Female", mrn: "MRN-4471938",
+    department: "Pulmonology", physician: "Dr. Naomi Thistle", admitted: "2026-11-10", status: "Discharged",
+    room: "—", blood: "O+", phone: "(555) 010-3365", insurance: "Contoso Care HMO",
+    diagnosis: "Pulmonary embolism, submassive (resolved)",
+    history: ["Oral contraceptive use", "Recent long-haul travel"],
+    allergies: [],
+    medications: [{ name: "Rivaroxaban", dose: "20 mg PO", freq: "Daily" }],
+    plan: ["Anticoagulation 3–6 months", "Hematology follow-up in 4 weeks"],
+    vitals: { hr: 74, sbp: 120, dbp: 76, rr: 14, spo2: 98, temp: 36.6, pain: 0 },
+    notes: [{ author: "Dr. Naomi Thistle", role: "Pulmonologist", time: "2026-11-15 14:00", text: "Discharged home in stable condition." }],
+  }),
+  p({
+    id: "P-10432", name: "Leopold Fairbanks", dob: "1952-08-07", gender: "Male", mrn: "MRN-4471944",
+    department: "ICU", physician: "Dr. Kenji Watanabe", admitted: "2026-11-18", status: "Critical",
+    room: "ICU-11", blood: "AB-", phone: "(555) 010-7720", insurance: "Medicare (demo)",
+    diagnosis: "Post-operative respiratory failure after CABG ×3",
+    history: ["Three-vessel coronary artery disease", "Peripheral arterial disease"],
+    allergies: [{ name: "Heparin", reaction: "HIT (history)", severity: "Severe" }],
+    medications: [
+      { name: "Argatroban", dose: "1 mcg/kg/min", freq: "Continuous" },
+      { name: "Dexmedetomidine", dose: "0.6 mcg/kg/h", freq: "Continuous" },
+    ],
+    plan: ["Wean ventilator per protocol", "Chest tube output monitoring", "Early mobility once extubated"],
+    vitals: { hr: 98, sbp: 104, dbp: 62, rr: 20, spo2: 95, temp: 37.4, pain: 3 },
+    notes: [{ author: "Dr. Kenji Watanabe", role: "Intensivist", time: "2026-11-22 07:15", text: "Passed SBT 30 min this morning. Plan extubation after rounds." }],
+  }),
+  p({
+    id: "P-10433", name: "Annika Bellweather", dob: "1996-12-01", gender: "Female", mrn: "MRN-4471951",
+    department: "Emergency", physician: "Dr. Marcus Feld", admitted: "2026-11-22", status: "Admitted",
+    room: "ED-03", blood: "A+", phone: "(555) 010-8813", insurance: "Fabrikam Mutual",
+    diagnosis: "Diabetic ketoacidosis",
+    history: ["Type 1 diabetes mellitus (2008)"],
+    allergies: [],
+    medications: [
+      { name: "Regular insulin", dose: "0.1 units/kg/h IV", freq: "Continuous" },
+      { name: "Lactated Ringer's", dose: "250 mL/h IV", freq: "Continuous" },
+    ],
+    plan: ["Hourly glucose, BMP Q2H", "Transition to SC insulin when gap closes", "Endocrinology consult"],
+    vitals: { hr: 116, sbp: 110, dbp: 68, rr: 26, spo2: 99, temp: 37.0, pain: 3 },
+    notes: [{ author: "Dr. Marcus Feld", role: "Emergency Physician", time: "2026-11-22 11:20", text: "Anion gap 24 → 18. Potassium repleted." }],
+  }),
+  p({
+    id: "P-10434", name: "Florian Tash", dob: "1987-03-26", gender: "Male", mrn: "MRN-4471963",
+    department: "Orthopedics", physician: "Dr. Coleman Adebayo", admitted: "2026-11-12", status: "Discharged",
+    room: "—", blood: "O+", phone: "(555) 010-5049", insurance: "Northwind Health PPO",
+    diagnosis: "Left tibial plateau fracture, ORIF",
+    history: ["No significant history"],
+    allergies: [{ name: "Ibuprofen", reaction: "GI upset", severity: "Mild" }],
+    medications: [{ name: "Acetaminophen", dose: "1 g PO", freq: "Q8H PRN" }],
+    plan: ["Non-weight-bearing 6 weeks", "Clinic follow-up 2 weeks"],
+    vitals: { hr: 70, sbp: 122, dbp: 78, rr: 14, spo2: 99, temp: 36.6, pain: 2 },
+    notes: [{ author: "Dr. Coleman Adebayo", role: "Orthopedic Surgeon", time: "2026-11-15 11:00", text: "Discharged with crutches; home PT arranged." }],
+  }),
+  p({
+    id: "P-10435", name: "Ottoline Varga", dob: "1960-01-08", gender: "Female", mrn: "MRN-4471977",
+    department: "Neurology", physician: "Dr. Helena Marsh", admitted: "2026-11-21", status: "Admitted",
+    room: "5E-514", blood: "B+", phone: "(555) 010-6624", insurance: "Contoso Care HMO",
+    diagnosis: "Myasthenia gravis exacerbation",
+    history: ["Myasthenia gravis (2019)", "Thymectomy (2020)"],
+    allergies: [],
+    medications: [
+      { name: "Pyridostigmine", dose: "60 mg PO", freq: "Q6H" },
+      { name: "IVIG", dose: "0.4 g/kg IV", freq: "Daily × 5" },
+    ],
+    plan: ["NIF and FVC every 6 h", "Low threshold for ICU transfer", "Neurology follow-up"],
+    vitals: { hr: 84, sbp: 126, dbp: 76, rr: 20, spo2: 95, temp: 36.9, pain: 1 },
+    notes: [{ author: "Dr. Helena Marsh", role: "Neurologist", time: "2026-11-22 10:40", text: "FVC 1.9 L (stable). NIF −32. IVIG day 2 of 5." }],
+  }),
+  p({
+    id: "P-10436", name: "Ignatius Pemberton", dob: "1945-07-17", gender: "Male", mrn: "MRN-4471985",
+    department: "Pulmonology", physician: "Dr. Naomi Thistle", admitted: "2026-11-19", status: "Observation",
+    room: "6W-604", blood: "A+", phone: "(555) 010-1846", insurance: "Medicare (demo)",
+    diagnosis: "Interstitial lung disease, acute exacerbation",
+    history: ["Idiopathic pulmonary fibrosis (2022)"],
+    allergies: [{ name: "Shellfish", reaction: "Urticaria", severity: "Moderate" }],
+    medications: [
+      { name: "Nintedanib", dose: "150 mg PO", freq: "BID" },
+      { name: "High-flow nasal cannula", dose: "40 L/min, FiO2 0.45", freq: "Continuous" },
+    ],
+    plan: ["HFNC wean as tolerated", "6-minute walk test before discharge", "Palliative care discussion"],
+    vitals: { hr: 90, sbp: 130, dbp: 78, rr: 24, spo2: 92, temp: 37.0, pain: 1 },
+    notes: [{ author: "Tomás Reyes, RRT", role: "Respiratory Therapist", time: "2026-11-22 09:55", text: "HFNC weaned to 40 L / 0.45. Work of breathing mildly increased with exertion." }],
+  }),
+];
+
+export const getPatient = (id) => patients.find((x) => x.id === id);
+
+export function ageFrom(dob, ref = new Date("2026-11-22")) {
+  const d = new Date(dob);
+  let a = ref.getFullYear() - d.getFullYear();
+  const m = ref.getMonth() - d.getMonth();
+  if (m < 0 || (m === 0 && ref.getDate() < d.getDate())) a--;
+  return a;
+}
